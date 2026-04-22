@@ -19,4 +19,4 @@ Route::prefix('books')
         Route::post('/store' , 'store');
 });
 
-Route::post('/orders/store', [OrderController::class, 'store']);
+Route::post('/orders/store', [OrderController::class, 'store'])->middleware('throttle:orders');
